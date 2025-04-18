@@ -23,8 +23,22 @@ class TestStringCalculator(unittest.TestCase):
         self.assertEqual(result, 10)
 
     def test_add_customised_delimiter_string(self):
-        result = add_strings("//;\n1;2")
+        result = add_strings("//*\n1*2")
         self.assertEqual(result, 3)
+    
+    def test_negative_number_raises_exception(self):
+        with self.assertRaises(ValueError) as context:
+            add_strings("1, 4, -6, 7")
+        
+        self.assertIn("Negative numbers not allowed", str(context.exception))
+        self.assertIn("-6", str(context.exception))
+
+    def test_multiple_negative_numbers(self):
+        with self.assertRaises(ValueError) as context:
+            add_strings("1, 4, -6, 7, -3")
+        
+        self.assertIn("-6", str(context.exception))
+        self.assertIn("-3", str(context.exception))
     
 
 if __name__ == '__main__':
