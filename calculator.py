@@ -1,3 +1,2 @@
 def add_strings(s):
-    if s == '':
-        return 0
+    return int(s)
