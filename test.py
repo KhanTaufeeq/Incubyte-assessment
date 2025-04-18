@@ -15,7 +15,7 @@ class TestStringCalculator(unittest.TestCase):
         self.assertEqual(result, 17)
 
     def test_add_multiple_strings(self):
-        result = add_strings('8','9','2','5','6')
+        result = add_strings('8,9,5,4,3,1')
         self.assertEqual(result, 30)
     
     def test_add_newline_string(self):
