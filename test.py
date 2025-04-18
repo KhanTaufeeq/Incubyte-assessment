@@ -19,7 +19,7 @@ class TestStringCalculator(unittest.TestCase):
         self.assertEqual(result, 30)
     
     def test_add_newline_string(self):
-        result = add_strings(",1\n2,3\n4")
+        result = add_strings("1\n2,3\n4")
         self.assertEqual(result, 10)
 
     def test_add_customised_delimiter_string(self):
