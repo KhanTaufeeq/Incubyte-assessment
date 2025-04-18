@@ -18,6 +18,10 @@ class TestStringCalculator(unittest.TestCase):
         result = add_strings('8','9','2','5','6')
         self.assertEqual(result, 30)
     
+    def test_add_newline_string(self):
+        result = add_strings("1\n2,3\n4")
+        self.assertEqual(result, 10)
+    
 
 if __name__ == '__main__':
     unittest.main()
