@@ -1,2 +1,2 @@
-def add_strings(s):
-    return int(s)
+def add_strings(a,b):
+    return int(a) + int(b)
