@@ -13,6 +13,10 @@ class TestStringCalculator(unittest.TestCase):
     def test_add_dual_strings(self):
         result = add_strings('8','9')
         self.assertEqual(result, 17)
+
+    def test_add_multiple_strings(self):
+        result = add_strings('8','9','2','5','6')
+        self.assertEqual(result, 30)
     
 
 if __name__ == '__main__':
