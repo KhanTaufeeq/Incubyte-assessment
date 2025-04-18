@@ -1,6 +1,6 @@
 # 🧪 String Calculator - TDD Kata in Python
 
-This repository contains an implementation of the classic **String Calculator** Kata using **Test-Driven Development (TDD)** in Python. Each feature is built incrementally using tests first, followed by code and refactoring.
+This project is an implementation of the classic **String Calculator** TDD Kata using Python and the built-in `unittest` module. The goal is to develop the `add()` function step by step through test-driven development (TDD), writing tests before writing code.
 
 ---
 
@@ -8,30 +8,49 @@ This repository contains an implementation of the classic **String Calculator** 
 
 ### 📦 Requirements
 - Python 3.6+
-- `unittest` (comes built-in with Python)
+- No external libraries required (uses built-in `unittest` and `re` modules)
 
 ---
 
-## 🧰 Project Structure
+## 🧰 Folder Structure
+
+. ├── calculator.py # Main logic - contains the add() function ├── test.py # Unit tests for add() ├──
 
 
 ---
 
-## ✅ Features (TDD Steps)
+## ✅ Features Implemented
 
-### Step-by-step functionality added:
+### 🔹 Basic Functionality
+- ✅ Return `0` for an empty string
+- ✅ Return the number itself for a single number (e.g., `"5"` → `5`)
+- ✅ Add two comma-separated numbers (e.g., `"1,2"` → `3`)
+- ✅ Add any number of comma-separated values
 
-1. ✅ Return `0` for an empty string
-2. ✅ Return the number itself for a single number (e.g., `"5"` → `5`)
-3. ✅ Add two comma-separated numbers (e.g., `"1,2"` → `3`)
-4. ✅ Handle an unknown amount of comma-separated numbers
-5. ✅ Support newline (`\n`) as a valid separator along with commas
-6. ✅ Support custom delimiter in the format:  
-   `//[delimiter]\n[numbers…]`  
-   Example: `"//;\n1;2"` → `3`
-7. ✅ Throw an exception for negative numbers with the message:  
-   `"negative numbers not allowed: -1, -5"`
-8. ✅ Show **all** negative numbers in the exception message
+### 🔹 Support for Newlines
+- ✅ Handle newline (`\n`) as an additional delimiter  
+  Example: `"1\n2,3"` → `6`
+
+### 🔹 Custom Delimiters
+- ✅ Use custom delimiter from the string:  
+  Format: `"//[delimiter]\n[numbers...]"`  
+  Example: `"//;\n1;2"` → `3`
+
+- ✅ Delimiters of any length:  
+  Example: `"//[***]\n1***2***3"` → `6`
+
+- ✅ Multiple delimiters:  
+  Example: `"//[*][%]\n1*2%3"` → `6`
+
+- ✅ Multiple delimiters with longer length:  
+  Example: `"//[***][##]\n1***2##3"` → `6`
+
+### 🔹 Edge Cases
+- ✅ Ignore numbers bigger than 1000  
+  Example: `"2,1001"` → `2`
+
+- ✅ Throw exception for negative numbers:  
+  Example: `"-1,2,-5"` → ❌ `"negative numbers not allowed: -1, -5"`
 
 ---
 
@@ -40,4 +59,53 @@ This repository contains an implementation of the classic **String Calculator** 
 Run all test cases:
 
 ```bash
-python -m unittest discover
+python -m unittest test.py
+
+
+---
+
+## ✅ Features Implemented
+
+### 🔹 Basic Functionality
+- ✅ Return `0` for an empty string
+- ✅ Return the number itself for a single number (e.g., `"5"` → `5`)
+- ✅ Add two comma-separated numbers (e.g., `"1,2"` → `3`)
+- ✅ Add any number of comma-separated values
+
+### 🔹 Support for Newlines
+- ✅ Handle newline (`\n`) as an additional delimiter  
+  Example: `"1\n2,3"` → `6`
+
+### 🔹 Custom Delimiters
+- ✅ Use custom delimiter from the string:  
+  Format: `"//[delimiter]\n[numbers...]"`  
+  Example: `"//;\n1;2"` → `3`
+
+- ✅ Delimiters of any length:  
+  Example: `"//[***]\n1***2***3"` → `6`
+
+- ✅ Multiple delimiters:  
+  Example: `"//[*][%]\n1*2%3"` → `6`
+
+- ✅ Multiple delimiters with longer length:  
+  Example: `"//[***][##]\n1***2##3"` → `6`
+
+### 🔹 Edge Cases
+- ✅ Ignore numbers bigger than 1000  
+  Example: `"2,1001"` → `2`
+
+- ✅ Throw exception for negative numbers:  
+  Example: `"-1,2,-5"` → ❌ `"negative numbers not allowed: -1, -5"`
+
+---
+
+## 🧪 Running the Tests
+
+Run all test cases:
+
+```bash
+python -m unittest test.py
+
+
+python -m unittest test.py TestStringCalculator.test_add_single_number
+
