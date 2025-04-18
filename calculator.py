@@ -5,13 +5,9 @@ def add_strings(s):
         return 0
     
     if s[0] == '/' and s[1] == '/':
-        delimiter1 = s[2]
-        delimiter2 = s[3]
         sub_string = s.split('\n')
         sub_num_string = sub_string[1]
-        delimiter1 = re.escape(delimiter1)
-        delimiter2 = re.escape(delimiter2)
-        pattern = f"{delimiter1}|{delimiter2}"
+        pattern = get_delimiter_pattern(sub_string[0])
         splitted_string = re.split(pattern,sub_num_string)
         splitted_string = [n for n in splitted_string if n != '']
     
@@ -38,3 +34,11 @@ def is_negative(s):
     negatives = [n for n in s if int(n) < 0]
     if negatives:
         raise ValueError (f"Negative numbers not allowed: {', '.join(negatives)}")
+
+
+def get_delimiter_pattern(s):
+    pattern = ''
+    for i in s[2:]:
+            i = re.escape(i)
+            pattern = pattern + i + '|'
+    return pattern
