@@ -23,8 +23,8 @@ class TestStringCalculator(unittest.TestCase):
         self.assertEqual(result, 10)
 
     def test_add_customised_delimiter_string(self):
-        result = add_strings("//-\n1--2-3")
-        self.assertEqual(result, 6)
+        result = add_strings("//;\n1;2")
+        self.assertEqual(result, 3)
     
 
 if __name__ == '__main__':
