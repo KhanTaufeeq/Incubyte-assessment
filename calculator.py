@@ -5,11 +5,14 @@ def add_strings(s):
         return 0
     
     if s[0] == '/' and s[1] == '/':
-        delimiter = s[2]
+        delimiter1 = s[2]
+        delimiter2 = s[3]
         sub_string = s.split('\n')
         sub_num_string = sub_string[1]
-        delimiter = re.escape(delimiter)
-        splitted_string = re.split(delimiter,sub_num_string)
+        delimiter1 = re.escape(delimiter1)
+        delimiter2 = re.escape(delimiter2)
+        pattern = f"{delimiter1}|{delimiter2}"
+        splitted_string = re.split(pattern,sub_num_string)
         splitted_string = [n for n in splitted_string if n != '']
     
     else:

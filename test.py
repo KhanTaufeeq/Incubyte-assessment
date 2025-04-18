@@ -44,6 +44,10 @@ class TestStringCalculator(unittest.TestCase):
     def test_add_multiple_customised_delimiter_string(self):
         result = add_strings("//*\n1******2***3**4")
         self.assertEqual(result, 10)
+
+    def test_add_dual_customised_delimiter_string(self):
+        result = add_strings("//*%\n1*2%3")
+        self.assertEqual(result, 6)
     
 
 if __name__ == '__main__':
