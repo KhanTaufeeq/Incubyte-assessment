@@ -2,11 +2,10 @@ import unittest
 from calculator import add_strings
 
 class TestStringCalculator(unittest.TestCase):
-    def TestAddEmptyString(self):
+    def test_add_empty_string(self):
         result = add_strings('')
         self.assertEqual(result, 0)
     
 
-test_case1 = TestStringCalculator()
-
-test_case1.TestAddEmptyString()
+if __name__ == '__main__':
+    unittest.main()
