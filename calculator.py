@@ -1,11 +1,17 @@
 import re
 
 def add_strings(s):
-
-    splitted_string = re.split(r'[,\n]', s)
     sum_num = 0
+    delimiter = s[2]
+
+    sub_string = s.split('\n')
+    numbers_sub_string = sub_string[1]
+
+    delimiter = re.escape(delimiter)
+
+    splitted_string = re.split(delimiter, numbers_sub_string)
+
     for i in splitted_string:
-        if i != '':
             sum_num += int(i)
 
     return sum_num
