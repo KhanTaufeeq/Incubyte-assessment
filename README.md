@@ -1,6 +1,6 @@
 # 🧪 String Calculator - TDD Kata in Python
 
-This project is an implementation of the classic **String Calculator** TDD Kata using Python and the built-in `unittest` module. The goal is to develop the `add()` function step by step through test-driven development (TDD), writing tests before writing code.
+This project is an implementation of the classic **String Calculator** TDD Kata using Python and the built-in `unittest` module. The goal is to develop the `add_strings()` function step by step through test-driven development (TDD), writing tests before writing code.
 
 ---
 
@@ -14,7 +14,7 @@ This project is an implementation of the classic **String Calculator** TDD Kata 
 
 ## 🧰 Folder Structure
 
-. ├── calculator.py # Main logic - contains the add() function ├── test.py # Unit tests for add() ├──
+. ├── calculator.py # Main logic - contains the add_strings() function ├── test.py # Unit tests for add_strings() ├──
 
 
 ---
