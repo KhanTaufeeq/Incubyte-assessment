@@ -15,8 +15,8 @@ class TestStringCalculator(unittest.TestCase):
         self.assertEqual(result, 17)
 
     def test_add_multiple_strings(self):
-        result = add_strings('8,9,5,4,3,1')
-        self.assertEqual(result, 30)
+        result = add_strings('8,9,5,4,3,1002')
+        self.assertEqual(result, 29)
     
     def test_add_newline_string(self):
         result = add_strings("1\n2,3\n4")
@@ -39,6 +39,11 @@ class TestStringCalculator(unittest.TestCase):
         
         self.assertIn("-6", str(context.exception))
         self.assertIn("-3", str(context.exception))
+
+    
+    def test_add_multiple_customised_delimiter_string(self):
+        result = add_strings("//*\n1******2***3**4")
+        self.assertEqual(result, 10)
     
 
 if __name__ == '__main__':

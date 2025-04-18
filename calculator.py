@@ -10,6 +10,7 @@ def add_strings(s):
         sub_num_string = sub_string[1]
         delimiter = re.escape(delimiter)
         splitted_string = re.split(delimiter,sub_num_string)
+        splitted_string = [n for n in splitted_string if n != '']
     
     else:
         splitted_string = re.split(r'[,\n]',s)
@@ -24,7 +25,10 @@ def add_strings(s):
 def add_multiple_number_string(s):
     sum_num = 0
     for i in s:
-        sum_num += int(i)
+        if int(i) > 1000:
+            continue
+        else:
+            sum_num += int(i)
     return sum_num
 
 def is_negative(s):
